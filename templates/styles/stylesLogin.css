@@ -1,0 +1,27 @@
+body {
+    height: 100vh;
+    background: rgba(36, 14, 65, 1) 0% !important;
+}
+.login-card {
+    max-width: 400px;
+    margin: auto;
+    margin-top: 8%;
+    padding: 30px;
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+footer {
+    margin-top: 50px;
+    text-align: center;
+    color: #777;
+}
+.btn-primary {
+    background-color: #8F39F2 !important;
+    border-color: #8F39F2 !important;
+
+}
+.btn-primary:hover {
+    background-color: #7329c8 !important;
+    border-color: #7329c8 !important;
+}
