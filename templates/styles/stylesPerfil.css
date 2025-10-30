@@ -1,0 +1,20 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: rgba(36, 14, 65, 1) 0% !important;
+    color: #fff;
+}
+.profile-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
+    border-radius: 15px;
+    padding: 30px;
+}
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+}
