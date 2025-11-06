@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: rgba(36, 14, 65, 1) 0% !important;
+    color: #ffffff;
+}
+
+.navbar {
+    background: rgba(0, 0, 0, 0.3) !important; 
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    color: #ddd !important;
+    transition: color 0.2s;
+}
+
+.nav-link:hover {
+    color: #fff !important;
+}
+
+.bem-vindo {
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+.bem-vindo h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.bem-vindo p {
+    font-size: 1.1rem;
+    color: #ccc;
+}
+
+.evento-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.evento-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.card-title {
+    color: #fff;
+    font-weight: 600;
+}
+
+.card-text {
+    color: #bbb;
+}
+
+.btn-primary {
+    background-color: #6f42c1;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #59309d;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+    color: #aaa;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
