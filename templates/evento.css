@@ -3,7 +3,7 @@ body {
     padding: 0;
     min-height: 100vh;
     background: rgba(36, 14, 65, 1) 0% !important;
-    color: #fff;
+    color: #ffffff;
 }
 
 .navbar {
@@ -25,17 +25,22 @@ body {
 .nav-link:hover {
     color: #fff !important;
 }
-
-.profile-card {
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(8px);
-    border-radius: 15px;
-    padding: 30px;
+.evento-detalhe {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  padding: 40px;
+  max-width: 700px;
+  margin: 0 auto;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
 }
-.profile-img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #fff;
+
+.evento-detalhe h2 {
+  font-weight: 700;
+}
+
+.evento-detalhe p {
+  color: #ccc;
+  font-size: 1.05rem;
 }
