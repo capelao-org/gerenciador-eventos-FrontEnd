@@ -48,6 +48,8 @@ body {
   border-radius: 15px;
   backdrop-filter: blur(8px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 40dvh;
+  height: 30dvh;
 }
 
 .evento-card:hover {
@@ -79,4 +81,10 @@ footer {
     margin-top: 50px;
     color: #aaa;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#caixaEventos {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    align-items: center;
 }
