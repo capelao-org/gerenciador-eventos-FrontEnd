@@ -1,0 +1,65 @@
+body {
+    background: rgba(36, 14, 65, 1) 0% !important;
+    height: 100vh !important;
+}
+
+.login-card {
+    max-width: 450px;
+    margin: auto;
+    margin-top: 6%;
+    padding: 30px;
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+/* Cor principal: roxo */
+:root {
+    --roxo: #8F39F2;
+    --roxo-escuro: #742EC2;
+}
+/* Botão principal */
+.btn-primary {
+    background-color: var(--roxo) !important;
+    border-color: var(--roxo) !important;
+}
+.btn-primary:hover {
+    background-color: var(--roxo-escuro) !important;
+    border-color: var(--roxo-escuro) !important;
+}
+/* Links */
+a {
+    color: var(--roxo);
+    text-decoration: none;
+}
+a:hover {
+    color: var(--roxo-escuro);
+}
+/* Estilo dos botões sociais */
+.btn-social {
+    width: 100%;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    font-weight: 500;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: 2px solid var(--roxo);
+    transition: 0.3s;
+}
+.btn-social:hover {
+    background: var(--roxo);
+    color: white;
+}
+.btn-social img {
+    width: 20px;
+}
+.text-muted {
+    color: #777 !important;
+}
+button > a {
+    text-decoration: none !important;
+    color: white !important;
+    font-weight: bold !important;
+}
