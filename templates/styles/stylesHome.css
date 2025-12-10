@@ -49,7 +49,7 @@ body {
   backdrop-filter: blur(8px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   width: 40dvh;
-  height: 30dvh;
+  height: 35dvh !important;
 }
 
 .evento-card:hover {
@@ -87,4 +87,7 @@ footer {
     display: grid;
     grid-template-columns: repeat(4,1fr);
     align-items: center;
+}
+img {
+    border-radius: 15px 15px 0 0;
 }
