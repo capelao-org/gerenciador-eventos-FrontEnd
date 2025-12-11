@@ -1,8 +1,13 @@
-const formAtividade = document.querySelector("#formAtividade") || null
+
 const evento_detalhes = document.querySelector("#evento-detalhe") || null
+const atividade_lista = document.querySelector("#listaAtividades")
+
 
 const params = new URLSearchParams(window.location.search);
 const id_evento = params.get("id")
+
+const link_att = document.querySelector(".link-add-att");
+link_att.innerHTML = `<a href=\"cadastroAtividades.html?id=${id_evento}\">Adcionar Atividade </a>`;
 
 async function puxaEvento() {
     try {
@@ -20,7 +25,7 @@ function exibirEvento(dados) {
     evento_detalhes.innerHTML = ''
 
     const section = document.createElement("div");
-    section.className = "evento-detalhe text-center text-white"
+    section.className = " text-center text-white"
 
     section.appendChild(Object.assign(document.createElement("h2"), {
         textContent: `${dados.nome}`,
@@ -28,12 +33,12 @@ function exibirEvento(dados) {
     }))
 
     section.appendChild(Object.assign(document.createElement("p"), {
-        textContent: `Data Inicial: ${dados.dataInicial}`
+        innerHTML: `<strong>Data Inicial:</strong> ${dados.dataInicial}`
     }));
 
 
     section.appendChild(Object.assign(document.createElement("p"), {
-        textContent: `Descriçao: ${dados.descricao}`
+        innerHTML: `<strong>Descrição:</strong> ${dados.descricao}`
     }));
 
     section.appendChild(Object.assign(document.createElement("button"), {
@@ -69,6 +74,23 @@ async function puxaAtividade() {
     }
 }
 
+function exibirAtividades(dados) {
+    const div = document.createElement("div");
+    div.className = "card card-atividade h-100";
+
+    dados.forEach(atividade => {
+        
+        div.appendChild(Object.assign(document.createElement("h5"), {
+            textContent: `Titulo: ${atividade.titulo}`,
+        }))
+        div.appendChild(Object.assign(document.createElement("p"), {
+            textContent: `${atividade.descricao}`,
+        }))
+        
+        atividade_lista.appendChild(div)
+    });
+}
+
 // formEvento.addEventListener('submit', async (e) => {
 //   e.preventDefault();
 
@@ -81,3 +103,4 @@ async function puxaAtividade() {
 // })
 
 puxaEvento();
+puxaAtividade();

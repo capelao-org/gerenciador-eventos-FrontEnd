@@ -27,32 +27,33 @@
         <div class="card p-4" style="width: 450px;">
             <h2 class="text-center mb-3">Cadastrar Evento</h2>
 
+            <p id="resposta" style="color: green;"></p> 
             <form id="formEvento" novalidate>
 
                 <!-- Nome do evento -->
                 <div class="mb-3">
                     <label class="form-label">Nome do evento</label>
-                    <input type="text" class="form-control" id="nomeEvento" required>
+                    <input name="nome" type="text" class="form-control" id="nomeEvento" required>
                     <div class="invalid-feedback">Digite o nome do evento.</div>
                 </div>
 
                 <!-- Datas -->
                 <div class="mb-3">
                     <label class="form-label">Data de início</label>
-                    <input type="date" class="form-control" id="dataInicio" required>
+                    <input name="dataInicial" type="date" class="form-control" id="dataInicio" required>
                     <div class="invalid-feedback">Informe a data de início.</div>
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label">Data de término</label>
-                    <input type="date" class="form-control" id="dataFim" required>
+                    <input name="dataFinal" type="date" class="form-control" id="dataFim" required>
                     <div class="invalid-feedback">Informe a data de término.</div>
                 </div>
 
                 <!-- Descrição -->
                 <div class="mb-3">
                     <label class="form-label">Descrição</label>
-                    <textarea class="form-control" id="descricao" rows="3" required></textarea>
+                    <textarea name="descricao" class="form-control" id="descricao" rows="3" required></textarea>
                     <div class="invalid-feedback">Digite uma descrição para o evento.</div>
                 </div>
 
@@ -71,26 +72,12 @@
 
     <!-- Validação -->
     <script>
-        const form = document.getElementById('formEvento');
+        // const form = document.getElementById('formEvento');
 
-        form.addEventListener('submit', function(event) {
-            if (!form.checkValidity()) {
-                event.preventDefault();
-            }
-            form.classList.add('was-validated');
-
-            // Validação extra: data final >= data inicial
-            const inicio = document.getElementById('dataInicio');
-            const fim = document.getElementById('dataFim');
-
-            if (inicio.value && fim.value && fim.value < inicio.value) {
-                event.preventDefault();
-                fim.classList.add('is-invalid');
-                fim.nextElementSibling.textContent = "A data de término deve ser depois da data de início.";
-            } else {
-                fim.classList.remove('is-invalid');
-            }
-        });
+        // form.addEventListener('submit', function(event) {
+           
+        // });
     </script>
+    <script src="./scripts/addEvento.js"></script>
 </body>
 </html>

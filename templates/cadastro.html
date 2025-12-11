@@ -14,23 +14,20 @@
     <div class="login-card">
         <h3 class="text-center mb-4">Criar Conta</h3>
 
-        <form>
+        <p id="resposta" style="color: green;"></p>
+
+        <form id="form-cadastro">
             <!-- Nome -->
             <div class="mb-3">
-                <label class="form-label">Nome completo</label>
-                <input type="text" class="form-control" placeholder="Digite seu nome">
+                <label class="form-label">Usuario</label>
+                <input name="nome" type="text" class="form-control" placeholder="Digite seu nome">
             </div>
 
-            <!-- E-mail -->
-            <div class="mb-3">
-                <label class="form-label">E-mail</label>
-                <input type="email" class="form-control" placeholder="Digite seu e-mail">
-            </div>
 
             <!-- Senha -->
             <div class="mb-3">
                 <label class="form-label">Senha</label>
-                <input type="password" class="form-control" placeholder="Digite sua senha">
+                <input name="senha" type="password" class="form-control" placeholder="Digite sua senha">
             </div>
 
             <!-- Botão cadastrar -->
@@ -66,6 +63,7 @@
         © 2025 - Capelas | nenhum direito reservado
     </footer>
 
+    <script src="scripts/cadastro.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- hfhfh -->
 </body>
