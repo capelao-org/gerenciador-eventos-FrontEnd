@@ -1,6 +1,7 @@
 const caixaDosEventos = document.querySelector("#caixaEventos"); // colocar o id da caixa que fica os eventos
 const formEvento = document.querySelector("#formEvento") || null // id do form
 
+
 async function puxaEventos() {
     try {
         const response = await fetch("http://127.0.0.1:3000/evento"); 
@@ -17,7 +18,11 @@ function exibirEventos(dadosEventos) {
     caixaDosEventos.innerHTML = '';
     dadosEventos.forEach(evento => {
         const div = document.createElement("div");
-        div.className = "card evento-card text-white card-body mt-3 m-2";
+        div.className = "card evento-card text-white card-body ";
+
+        div.appendChild(Object.assign(document.createElement("img"), {
+            src: "img/inteligencia-artificial-ia.jpg"
+        } ))
 
         div.appendChild(Object.assign(document.createElement("h5"), {
             textContent: `${evento.nome}`,
@@ -37,7 +42,8 @@ function exibirEventos(dadosEventos) {
 
         div.appendChild(Object.assign(document.createElement("a"), {
             textContent: "Ver mais",
-            className: "btn btn-primary w-100"
+            className: "btn btn-primary w-100",
+            href: `evento.html?id=${evento.id}`
         }));
 
         caixaDosEventos.appendChild(div);
@@ -68,5 +74,7 @@ function enviarEvento(dados) {
 
 //   e.target.reset();
 // })
+
+
 
 puxaEventos();
