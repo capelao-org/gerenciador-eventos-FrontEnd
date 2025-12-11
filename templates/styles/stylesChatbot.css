@@ -1,0 +1,117 @@
+/* === ESTILO BASE GERAL DO PROJETO === */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: rgba(36, 14, 65, 1) !important;
+    color: #ffffff;
+}
+
+/* Navbar igual ao estilo enviado */
+.navbar {
+    background: rgba(0, 0, 0, 0.3) !important;
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #ffffff !important;
+}
+
+.nav-link {
+    color: #ddd !important;
+    transition: color 0.2s;
+}
+
+.nav-link:hover {
+    color: #fff !important;
+}
+
+/* === ESTILO DO CHATBOT === */
+
+/* Container principal */
+.chat-container {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+    width: 100%;
+    max-width: 750px;
+    height: 70vh;
+    margin: 0 auto;
+
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* Área de mensagens */
+.messages-box {
+    padding: 20px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+/* Mensagem do bot */
+.msg-bot {
+    background: rgba(255, 255, 255, 0.12);
+    padding: 12px 16px;
+    border-radius: 15px 15px 15px 0;
+    max-width: 75%;
+    margin-bottom: 12px;
+
+    color: #eee;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(6px);
+}
+
+/* Mensagem do usuário (para o futuro) */
+.msg-user {
+    background: rgba(76, 37, 148, 0.7);
+    color: white;
+    padding: 12px 16px;
+    border-radius: 15px 15px 0 15px;
+    max-width: 75%;
+    margin-left: auto;
+    margin-bottom: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Input e botão */
+.input-group {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+}
+
+input.form-control {
+    background: rgba(255,255,255,0.1);
+    border: none;
+    color: #fff;
+}
+
+input.form-control::placeholder {
+    color: #777575;
+}
+
+.btn-primary {
+    background: #4c2594 !important;
+    border: none !important;
+}
+
+.btn-primary:hover {
+    background: #6030c7 !important;
+}
+
+
+/* Scrollbar */
+.messages-box::-webkit-scrollbar {
+    width: 8px;
+}
+
+.messages-box::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+}
