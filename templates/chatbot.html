@@ -17,19 +17,19 @@
     </nav>
 
     <div class="container mt-4 d-flex justify-content-center">
-        <div class="chat-container">
+        <div id="chat-box" class="chat-container">
 
             <div class="messages-box" id="messages">
                 <div class="msg-bot">Bem vindo ao Chatbot do Capelas</div>
             </div>
 
             <div class="input-group p-3 border-top">
-                <input type="text" id="msgInput" class="form-control" placeholder="Digite uma mensagem..." disabled>
-                <button class="btn btn-primary" disabled>Enviar</button>
+                <input  type="text" id="mensagem" class="form-control" placeholder="Digite uma mensagem...">
+                <button class="btn btn-primary" onclick="enviarMensagem()" >Enviar</button>
             </div>
 
         </div>
     </div>
-
-</body>
+    <script src="scripts/chatbot.js"></script>
+</body> 
 </html>
