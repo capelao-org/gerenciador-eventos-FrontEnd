@@ -1,10 +1,16 @@
 const caixaDosEventos = document.querySelector("#caixaEventos"); // colocar o id da caixa que fica os eventos
 const formEvento = document.querySelector("#formEvento") || null // id do form
 
+const token = localStorage.getItem("token");
 
 async function puxaEventos() {
     try {
-        const response = await fetch("http://127.0.0.1:3000/evento"); 
+        const response = await fetch("http://127.0.0.1:3000/evento", {
+            headers: {
+                Authorization: `Bearer ${token}`,
+                "Content-Type": "application/json"
+            }
+        }); 
         const dados = await response.json();
 
         exibirEventos(dados);
@@ -21,7 +27,7 @@ function exibirEventos(dadosEventos) {
         div.className = "card evento-card text-white card-body ";
 
         div.appendChild(Object.assign(document.createElement("img"), {
-            src: "img/inteligencia-artificial-ia.jpg"
+            src: `${evento.urlImagemCapa}`,
         } ))
 
         div.appendChild(Object.assign(document.createElement("h5"), {

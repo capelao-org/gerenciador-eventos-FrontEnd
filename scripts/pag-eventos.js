@@ -2,6 +2,7 @@
 const evento_detalhes = document.querySelector("#evento-detalhe") || null
 const atividade_lista = document.querySelector("#listaAtividades")
 
+const token = localStorage.getItem("token");
 
 const params = new URLSearchParams(window.location.search);
 const id_evento = params.get("id")
@@ -11,7 +12,12 @@ link_att.innerHTML = `<a href=\"cadastroAtividades.html?id=${id_evento}\">Adcion
 
 async function puxaEvento() {
     try {
-        const response = await fetch(`http://127.0.0.1:3000/evento/${id_evento}`); 
+        const response = await fetch(`http://127.0.0.1:3000/evento/${id_evento}`, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+                "Content-Type": "application/json"
+            }
+        }); 
         const dados = await response.json();
 
         exibirEvento(dados);
@@ -52,7 +58,9 @@ function enviarAtividade(dados) {
     try {
         fetch(`http://127.0.0.1:3000/evento/${id_evento}/atividade`, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 
+                Authorization: `Bearer ${token}`,
+                'Content-Type': 'application/json' },
             body: JSON.stringify(dados)
         })
 
@@ -64,7 +72,12 @@ function enviarAtividade(dados) {
 
 async function puxaAtividade() {
     try {
-        const response = await fetch(`http://127.0.0.1:3000/evento/${id_evento}/atividade`); 
+        const response = await fetch(`http://127.0.0.1:3000/evento/${id_evento}/atividade`, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+                "Content-Type": "application/json"
+            }
+        }); 
         const dados = await response.json();
 
         exibirAtividades(dados);
