@@ -24,7 +24,7 @@ function exibirEventos(dadosEventos) {
     caixaDosEventos.innerHTML = '';
     dadosEventos.forEach(evento => {
         const div = document.createElement("div");
-        div.className = "card evento-card text-white card-body ";
+        div.className = "card evento-card text-white card-body m-1";
 
         div.appendChild(Object.assign(document.createElement("img"), {
             src: `${evento.urlImagemCapa}`,

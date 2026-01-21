@@ -47,9 +47,15 @@ function exibirEvento(dados) {
         innerHTML: `<strong>Descrição:</strong> ${dados.descricao}`
     }));
 
-    section.appendChild(Object.assign(document.createElement("button"), {
-        textContent: `Inscrever-se`
+    const btn = section.appendChild(Object.assign(document.createElement("button"), {
+        textContent: `Inscrever-se`,
+        className: "btn btn-primary",
+        id: "#btn-inscrever"
     }));
+
+    btn.addEventListener("click", () => {
+        inscreverNoEvento();
+    });
 
     evento_detalhes.appendChild(section);
 }

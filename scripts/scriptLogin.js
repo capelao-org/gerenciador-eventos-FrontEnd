@@ -17,6 +17,7 @@ formLogin.addEventListener("submit", async (e) => {
 
         if (resultado.token) {
             localStorage.setItem("token", resultado.token);
+            localStorage.setItem("id", resultado.id)
             window.location.href = "home.html";
         } else {
             erro.textContent = resultado.error;

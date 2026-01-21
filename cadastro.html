@@ -17,30 +17,32 @@
         <p id="resposta" style="color: green;"></p>
 
         <form id="form-cadastro">
-            <!-- Nome -->
-            <div class="mb-3">
-                <label class="form-label">Usuario</label>
-                <input name="nome" type="text" class="form-control" placeholder="Digite seu nome">
-            </div>
 
+  <div class="mb-3">
+    <label class="form-label">Usuário</label>
+    <input name="usuario" type="text" class="form-control" required>
+  </div>
 
-            <!-- Senha -->
-            <div class="mb-3">
-                <label class="form-label">Senha</label>
-                <input name="senha" type="password" class="form-control" placeholder="Digite sua senha">
-            </div>
+  <div class="mb-3">
+    <label class="form-label">Nome completo</label>
+    <input name="nome" type="text" class="form-control" required>
+  </div>
 
-            <label for="">Imagem de perfil</label>
-            <input type="file" name="imagem" id="imagem" accept="image/*">
+  <div class="mb-3">
+    <label class="form-label">Senha</label>
+    <input name="senha" type="password" class="form-control" required>
+  </div>
 
-            <!-- Botão cadastrar -->
-            <button type="submit" class="btn btn-primary w-100 mb-3"><a href="home.html">Cadastrar</a></button>
+  <div class="mb-3">
+    <label class="form-label">Imagem de perfil</label>
+    <input type="file" id="imagem" accept="image/*" class="form-control">
+  </div>
 
+  <button type="submit" class="btn btn-primary w-100">
+    Cadastrar
+  </button>
 
-            <div class="text-center mt-3">
-                <a href="login.html">Já tenho conta</a>
-            </div>
-        </form>
+</form>
     </div>
 
     <footer class="text-center mt-4 text-muted">
