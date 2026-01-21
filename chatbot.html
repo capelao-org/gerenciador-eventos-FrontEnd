@@ -17,19 +17,27 @@
     </nav>
 
     <div class="container mt-4 d-flex justify-content-center">
-        <div id="chat-box" class="chat-container">
+  <div class="chat-container card shadow-sm">
 
-            <div class="messages-box" id="messages">
-                <div class="msg-bot">Bem vindo ao Chatbot do Capelas</div>
-            </div>
-
-            <div class="input-group p-3 border-top">
-                <input  type="text" id="mensagem" class="form-control" placeholder="Digite uma mensagem...">
-                <button class="btn btn-primary" onclick="enviarMensagem()" >Enviar</button>
-            </div>
-
-        </div>
+    <div class="card-header bg-light fw-semibold">
+      Chatbot do Capelas
     </div>
-    <script src="./scripts/chatbot.js"></script>
-</body> 
+
+    <div class="messages-box card-body" id="messages">
+      <div class="msg-row msg-bot">
+        <div class="msg-bubble">Bem vindo ao Chatbot do Capelas</div>
+      </div>
+    </div>
+
+    <div class="card-footer border-top">
+      <form id="chatForm" class="input-group">
+        <input type="text" id="msgInput" class="form-control" placeholder="Digite uma mensagem..." autocomplete="off">
+        <button class="btn btn-primary" type="submit">Enviar</button>
+      </form>
+    </div>
+
+  </div>
+</div>
+
+</body>
 </html>
