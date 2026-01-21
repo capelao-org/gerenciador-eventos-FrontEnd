@@ -10,34 +10,37 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg bg-light shadow-sm">
+    <nav class="navbar navbar-expand-lg  shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="home.html">Capelas</a>
         </div>
     </nav>
 
     <div class="container mt-4 d-flex justify-content-center">
-  <div class="chat-container card shadow-sm">
+  <div class="chat-container shadow-sm">
 
-    <div class="card-header bg-light fw-semibold">
-      Chatbot do Capelas
-    </div>
-
-    <div class="messages-box card-body" id="messages">
-      <div class="msg-row msg-bot">
-        <div class="msg-bubble">Bem vindo ao Chatbot do Capelas</div>
-      </div>
-    </div>
-
-    <div class="card-footer border-top">
-      <form id="chatForm" class="input-group">
-        <input type="text" id="msgInput" class="form-control" placeholder="Digite uma mensagem..." autocomplete="off">
-        <button class="btn btn-primary" type="submit">Enviar</button>
-      </form>
-    </div>
-
+  <div class="card-header fw-semibold">
+    Chatbot do Capelas
   </div>
+
+  <div class="messages-box" id="messages">
+    <div class="msg-row msg-bot">
+      <div class="msg-bubble">Bem vindo ao Chatbot do Capelas</div>
+    </div>
+  </div>
+
+  <div class="card-footer">
+    <form id="chatForm" class="input-group">
+      <input type="text" id="msgInput" class="form-control" placeholder="Digite uma mensagem..." autocomplete="off">
+      <button class="btn btn-primary" type="submit">Enviar</button>
+    </form>
+  </div>
+
 </div>
+
+</div>
+
+<script src="./scripts/chatbot.js"></script>
 
 </body>
 </html>

@@ -7,6 +7,14 @@ const token = localStorage.getItem("token");
 const params = new URLSearchParams(window.location.search);
 const id_evento = params.get("id")
 
+
+const linkChatbot = document.getElementById("link-chatbot");
+
+
+linkChatbot.href = `chatbot.html?id=${id_evento}`;
+
+
+
 const link_att = document.querySelector(".link-add-att");
 link_att.innerHTML = `<a href=\"cadastroAtividades.html?id=${id_evento}\">Adcionar Atividade </a>`;
 

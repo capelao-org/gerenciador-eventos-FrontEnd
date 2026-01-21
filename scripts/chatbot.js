@@ -1,32 +1,53 @@
 const params = new URLSearchParams(window.location.search);
-const id_evento = params.get("id")
+const id_evento = params.get("id");
 
-async function enviarMensagem() {
-  const input = document.getElementById("mensagem");
-  const chatBox = document.getElementById("chat-box");
+const chatForm = document.getElementById("chatForm");
+const input = document.getElementById("msgInput");
+const messagesBox = document.getElementById("messages");
+
+chatForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
   const pergunta = input.value.trim();
-
-
   if (pergunta === "") return;
 
-  // Mostra a pergunta do usuário
-  chatBox.innerHTML += `<p><strong>Você:</strong> ${pergunta}</p>`;
-
-  fetch(`http://localhost:3000/chatbot/${id_evento}`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({ pergunta })
-  })
-  .then(res => res.json())
-  .then(data => {
-    chatBox.innerHTML += `<p><strong>Bot:</strong> ${data.resposta}</p>`;
-    chatBox.scrollTop = chatBox.scrollHeight;
-  })
-  .catch(() => {
-    chatBox.innerHTML += `<p><strong>Bot:</strong> Erro ao conectar com o servidor.</p>`;
-  });
+  // Mensagem do usuário
+  messagesBox.innerHTML += `
+    <div class="msg-row msg-user">
+      <div class="msg-bubble">${pergunta}</div>
+    </div>
+  `;
 
   input.value = "";
-}
+  messagesBox.scrollTop = messagesBox.scrollHeight;
+
+  try {
+    const response = await fetch(`http://localhost:3000/chatbot/${id_evento}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ pergunta })
+    });
+
+    const data = await response.json();
+
+    // Resposta do bot
+    messagesBox.innerHTML += `
+      <div class="msg-row msg-bot">
+        <div class="msg-bubble">${data.resposta}</div>
+      </div>
+    `;
+
+  } catch (error) {
+    messagesBox.innerHTML += `
+      <div class="msg-row msg-bot">
+        <div class="msg-bubble text-danger">
+          Erro ao conectar com o servidor.
+        </div>
+      </div>
+    `;
+  }
+
+  messagesBox.scrollTop = messagesBox.scrollHeight;
+});
