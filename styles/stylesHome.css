@@ -91,3 +91,26 @@ footer {
 img {
     border-radius: 15px 15px 0 0;
 }
+
+.evento-card {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.evento-card:hover {
+  transform: none; /* remove o scale daqui */
+}
+
+.evento-card:hover .evento-img {
+  transform: scale(1.05);
+}
+
+.evento-img {
+
+  width: 100%;
+  /* height: 160px; */
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  display: block;
+}

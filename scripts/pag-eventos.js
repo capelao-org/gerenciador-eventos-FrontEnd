@@ -9,14 +9,15 @@ const id_evento = params.get("id")
 
 
 const linkChatbot = document.getElementById("link-chatbot");
+const linkEdit = document.getElementById("link-editar");
 
-
+linkEdit.href = `editarEventos.html?id=${id_evento}`
 linkChatbot.href = `chatbot.html?id=${id_evento}`;
 
 
 
 const link_att = document.querySelector(".link-add-att");
-link_att.innerHTML = `<a href=\"cadastroAtividades.html?id=${id_evento}\">Adcionar Atividade </a>`;
+link_att.innerHTML = `<a class="btn btn-outline-light ms-2" href=\"cadastroAtividades.html?id=${id_evento}\">Adcionar Atividade </a>`;
 
 async function puxaEvento() {
     try {
@@ -39,11 +40,13 @@ function exibirEvento(dados) {
     evento_detalhes.innerHTML = ''
 
     const section = document.createElement("div");
-    section.className = " text-center text-white"
+    section.className = "text-center text-white"
 
-    section.appendChild(Object.assign(document.createElement("h2"), {
+    document.querySelector("#evento-img").src = `${dados.urlImagemCapa}`
+
+    section.appendChild(Object.assign(document.createElement("h1"), {
         textContent: `${dados.nome}`,
-        className: "mb-3"
+        className: "m-3 p-1"
     }))
 
     section.appendChild(Object.assign(document.createElement("p"), {
@@ -103,7 +106,7 @@ async function puxaAtividade() {
 
 function exibirAtividades(dados) {
     const div = document.createElement("div");
-    div.className = "card card-atividade h-100";
+    div.className = "card card-atividade";
 
     dados.forEach(atividade => {
         
@@ -118,16 +121,23 @@ function exibirAtividades(dados) {
     });
 }
 
-// formEvento.addEventListener('submit', async (e) => {
-//   e.preventDefault();
 
-//   const formData = new FormData(formEvento);
-//   const dados = Object.fromEntries(formData.entries());
+async function deletarEvento() {
+    try {
+        const response = await fetch(`http://127.0.0.1:3000/evento/${id_evento}`, {
+            method: 'DELETE',
+            headers: {
+                Authorization: `Bearer ${token}`,
+            }
+        }); 
+        
+        window.location.href = "./home.html";
+    }
+    catch (error) {
+        throw new Error("Erro ao buscar eventos: ", error);
+    }
 
-//   enviarEvento(dados);
-
-//   e.target.reset();
-// })
+}
 
 puxaEvento();
 puxaAtividade();

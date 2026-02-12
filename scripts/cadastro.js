@@ -37,7 +37,6 @@ form.addEventListener('submit', async (e) => {
   };
 
   try {
-    // 1️⃣ Criar usuário (SEM imagem)
     const responseUsuario = await fetch('http://localhost:3000/usuarios', {
       method: 'POST',
       headers: {

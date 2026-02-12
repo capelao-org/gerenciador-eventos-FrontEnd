@@ -5,8 +5,7 @@ async function enviarEvento(dados) {
     try {
         const resp = await fetch("http://127.0.0.1:3000/evento", {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(dados)
+            body: dados
         })
 
         const json = await resp.json(); 
@@ -39,9 +38,9 @@ formEvento.addEventListener('submit', async (e) => {
             // }
 
   const formData = new FormData(formEvento);
-  const dados = Object.fromEntries(formData.entries());
 
-  enviarEvento(dados);
+
+  enviarEvento(formData);
 
   e.target.reset();
 })

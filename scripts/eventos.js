@@ -24,10 +24,11 @@ function exibirEventos(dadosEventos) {
     caixaDosEventos.innerHTML = '';
     dadosEventos.forEach(evento => {
         const div = document.createElement("div");
-        div.className = "card evento-card text-white card-body m-1";
+        div.className = "card evento-card text-white card-body m-1 evento-card";
 
         div.appendChild(Object.assign(document.createElement("img"), {
             src: `${evento.urlImagemCapa}`,
+            className: "evento-img"
         } ))
 
         div.appendChild(Object.assign(document.createElement("h5"), {
